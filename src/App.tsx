@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.scss'
+import "bootstrap/dist/css/bootstrap.min.css"
+import {
+  Card,
+  InputGroup,
+  FormControl,
+  Button
+} from 'react-bootstrap'
 
-function App() {
+const App = () => {
+  const [text, setText] = useState('')
+
+  const handleChange = (event: any) => {
+    setText(event.target.value)
+  };
+
+  console.log(text)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Card className="input-card">
+        <Card.Body>
+          <InputGroup>
+            <FormControl
+              placeholder="覚えたい英単語"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+              type="text"
+              name="text"
+              value={text}
+              onChange={handleChange}
+            />
+            <InputGroup.Append>
+              <Button className="bg-info">保存</Button>
+            </InputGroup.Append>
+          </InputGroup>
+        </Card.Body>
+      </Card>
+    </>
   );
 }
 
