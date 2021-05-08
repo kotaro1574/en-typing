@@ -6,6 +6,7 @@ import {
   FormControl,
   Button,
 } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const SideBar = () => {
   const [text, setText] = useState('')
@@ -30,10 +31,10 @@ const SideBar = () => {
             <h1>en-typing</h1>
           </li>
           <li className="typing">
-            <a>Typing</a>
+            <Link to="/">Typing</Link>
           </li>
           <li className="list">
-            <a>単語一覧</a>
+            <Link to="/list">単語一覧</Link>
           </li>
           <li className="text-form">
             <InputGroup>
