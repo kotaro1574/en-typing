@@ -44,7 +44,7 @@ const App = () => {
           </div>
           <div className="right">
             <Switch>
-              <Route path="/" exact children={<Typing />} />
+              <Route path="/" exact children={<Typing list={texts}/>} />
               <Route path="/list" children={<WordList list={texts}/>} />
             </Switch>
           </div>
